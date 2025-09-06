@@ -1,21 +1,15 @@
-import { useState } from "react";
+// src/App.tsx
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import ListDetail from "./pages/ListDetail";
 
-function App() {
-  const [items, setItems] = useState<string[]>([]);
-
+export default function App() {
   return (
-    <div className="app">
-      <h1>PackHelper 🎒</h1>
-      <p>Jouw assistent voor backpack- en bikepackreizen.</p>
-      <ul>
-        {items.length === 0 ? (
-          <li>Nog geen items toegevoegd</li>
-        ) : (
-          items.map((item, i) => <li key={i}>{item}</li>)
-        )}
-      </ul>
+    <div className="container py-4">
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/list/:id" element={<ListDetail />} />
+      </Routes>
     </div>
   );
 }
-
-export default App;
