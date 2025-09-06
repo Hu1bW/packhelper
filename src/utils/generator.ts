@@ -10,7 +10,7 @@ export function generateDefaultItems(tripType: TripType, temperature: Temperatur
   ['Paspoort / ID', 'Portemonnee', 'Telefoon + lader', 'EHBO-set', 'Toiletartikelen (mini)'].forEach(add);
 
   // Kleding - ruwe richtlijn per aantal dagen
-  const shirts = Math.max(1, Math.ceil(durationDays / 2));
+ const shirts = Math.min(5, Math.max(1, Math.ceil(durationDays / 2)));
   add(`T-shirts (ongeveer ${shirts}x)`);
   add(`Ondergoed (ongeveer ${shirts}x)`);
   add(`Sokken (ongeveer ${Math.max(1, shirts)} paar)`);
@@ -52,6 +52,7 @@ export function generateDefaultItems(tripType: TripType, temperature: Temperatur
       add('Warme handschoenen');
       add('Muts / sjaal');
       add('Waterdichte winter schoenen');
+      add('Skies / snowboard (optioneel)');
       break;
     default:
       add('Extra kleding / materialen voor de activiteit');
