@@ -15,6 +15,10 @@ export function generateDefaultItems(tripType: TripType, temperature: Temperatur
   add(`Ondergoed (ongeveer ${shirts}x)`);
   add(`Sokken (ongeveer ${Math.max(1, shirts)} paar)`);
 
+  // Kleding voor Bikepacken
+ const fietsbroeken = Math.min(3, Math.max(1, Math.ceil(durationDays / 2)));
+
+
   // Specifiek per trip-type
   switch (tripType) {
     case 'beach':
@@ -29,6 +33,8 @@ export function generateDefaultItems(tripType: TripType, temperature: Temperatur
       add('Reserve binnenband');
       add('Pomp / CO2-patroon');
       add('Waterdichte zadeltas');
+      add('Fietsschoentjes');
+      add(`Fietsbroeken (ongeveer ${fietsbroeken}x)`);
       break;
     case 'backpack':
       add('Lichte rugzak');
@@ -53,6 +59,52 @@ export function generateDefaultItems(tripType: TripType, temperature: Temperatur
       add('Muts / sjaal');
       add('Waterdichte winter schoenen');
       add('Skies / snowboard (optioneel)');
+      break;
+    case 'hike':
+      add('Wandelschoenen');
+      add('Waterfles of camelbak');
+      add('Hoed / pet');
+      break;
+    case 'party':
+      add('Feestkleding');
+      add('Condooms');
+        add('Oordoppen');
+        break;
+    case 'resort':
+      add('Zwemkleding');
+      add('Zonnebril');
+      add('Zonnebrandcrème');
+      add('Luchtige kleding');
+      break;
+    case 'cruise':
+      add('Zwemkleding');
+      add('Zonnebril');
+      add('Zonnebrandcrème');
+      add('Cruise-tickets / documenten');
+      break;
+    case 'camping':
+      add('Tent + haringen + scheerlijnen');
+      add('Slaapzak');
+      add('Luchtbed / matje');
+      add('Campingstoel (optioneel)');
+      add('Zaklamp / hoofdlamp');
+      break;
+    case 'culture':
+      add('Camera + extra geheugenkaart');
+      add('Reisgids / notitieboekje');
+      add('Comfortabele wandelschoenen');
+      break;
+    case 'chill':
+      add('Boek / e-reader');
+      add('Comfortabele kleding');
+      add('Wireless headphones');
+      add('wireless speaker');
+      break;
+    case 'sport':
+      add('Sportkleding');
+      add('Sportschoenen');
+      add('Waterfles');
+      add('Handdoek');
       break;
     default:
       add('Extra kleding / materialen voor de activiteit');

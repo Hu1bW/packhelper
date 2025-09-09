@@ -19,14 +19,14 @@ export default function ListCard({
 }) {
   const progress = calcProgress(list);
   return (
-    <div className="card h-100">
+    <div className="card h-100 w-100">
       <div className="card-body d-flex flex-column">
         <h5 className="card-title">{list.name}</h5>
         <h6 className="card-subtitle mb-2 text-muted text-capitalize">
           {list.tripType} • {new Date(list.startDate).toLocaleDateString()}
         </h6>
 
-        <div className="mb-3 mt-auto">
+        <div className="mb-3 mt-auto w-100 row-cols-1">
           <div className="progress" style={{ height: 18 }}>
             <div
               className="progress-bar"

@@ -46,9 +46,9 @@ export default function HomePage() {
   };
 
   return (
-    <>
-      <div className="d-flex justify-content-between align-items-center mb-4">
-        <h1>PackHelper</h1>
+    <div className="container-fluid mt-4">
+      <div className="mb-4">
+        <h1 className="mb-3">PackHelper</h1>
         <button className="btn btn-primary" onClick={() => setShowWizard(true)}>
           Nieuwe lijst
         </button>
@@ -61,21 +61,21 @@ export default function HomePage() {
         />
       )}
 
-      <div className="row">
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
         {lists.length === 0 ? (
-          <div className="col-12">
+          <div className="col">
             <div className="alert alert-info">
               Nog geen lijsten — klik op 'Nieuwe lijst' om te beginnen.
             </div>
           </div>
         ) : (
           lists.map((l) => (
-            <div key={l.id} className="col-md-6 col-lg-4 mb-3">
+            <div key={l.id} className="row-cols-1 col d-flex">
               <ListCard list={l} onDelete={() => deleteList(l.id)} />
             </div>
           ))
         )}
       </div>
-    </>
+    </div>
   );
 }

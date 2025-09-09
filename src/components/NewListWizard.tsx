@@ -26,8 +26,15 @@ export default function NewListWizard({ onCancel, onCreate }: Props) {
     "bikepack",
     "beach",
     "city",
+    "chill",
     "roadtrip",
     "hike",
+    "camping",
+    "cruise",
+    "party",
+    "sport",
+    "resort",
+    "culture",
     "other",
   ];
   const coldOptions: TripType[] = [
@@ -36,6 +43,11 @@ export default function NewListWizard({ onCancel, onCreate }: Props) {
     "roadtrip",
     "winter",
     "hike",
+    "party",
+    "culture",
+    "resort",
+    "chill",
+    "sport",
     "other",
   ];
 

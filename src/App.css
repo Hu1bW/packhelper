@@ -1,8 +1,24 @@
+/* --- Reset van Vite template die alles centreert/verkrapt --- */
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: none !important;
+  text-align: initial !important;
+  min-height: 100vh;
+}
+
+/* Optioneel: dark bg als je dat wil */
+body {
+  min-height: 100vh;
+  /* background-color: #212529;  */
+  /* color: #fff; */
+}
+
+/* Heel belangrijk: haal elke width/ max-width van .card weg */
+.card {
+  width: 100% !important;
+  max-width: none !important;
 }
 
 .logo {
@@ -35,6 +51,7 @@
 
 .card {
   padding: 2em;
+  width: 87vw;
 }
 
 .read-the-docs {
